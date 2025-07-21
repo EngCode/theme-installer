@@ -189,7 +189,7 @@ if (!function_exists('pds_install_phenix_blocks_plugin')) :
         
         //===> Log Error if Installation Failed <===//
         if (is_wp_error($result)) {
-            error_log('PDS Theme: Failed to install Phenix Blocks plugin - ' . $result->get_error_message());
+            error_log('PDS Theme Installer: Failed to install Phenix Blocks plugin - ' . $result->get_error_message());
         }
         
         return false;

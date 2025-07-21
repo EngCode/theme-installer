@@ -153,9 +153,9 @@ document.addEventListener('DOMContentLoaded', () => {
             //====> Handle Plugin Installation Form Submission <====//
             handleFormSubmission(form, {
                 action: 'pds_install_plugins',
-                loadingText: 'جارٍ التثبيت...',
-                successMessage: 'تم تثبيت الإضافات بنجاح!',
-                errorMessage: 'حدث خطأ أثناء تثبيت الإضافات',
+                loadingText: 'Installing...',
+                successMessage: 'Plugins installed successfully!',
+                errorMessage: 'An error occurred while installing plugins',
                 nextStep: 'content',
                 //====> Validation Function <====//
                 validation: () => {
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const selected = form.querySelectorAll('input[name="plugins[]"]:checked');
                     //====> Show error if no plugins selected <====//
                     if (selected.length === 0) {
-                        showMessage('يرجى اختيار إضافة واحدة على الأقل', 'error');
+                        showMessage('Please select at least one plugin', 'error');
                         return false;
                     }
                     //====> All plugins are valid <====//
@@ -185,9 +185,9 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             handleFormSubmission(form, {
                 action: 'pds_import_content',
-                loadingText: 'جارٍ الاستيراد...',
-                successMessage: 'تم استيراد المحتوى بنجاح!',
-                errorMessage: 'حدث خطأ أثناء استيراد المحتوى',
+                loadingText: 'Importing...',
+                successMessage: 'Content imported successfully!',
+                errorMessage: 'An error occurred while importing content',
                 nextStep: 'complete'
             });
         }
@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
             //=====> Disable button if no plugins selected <=====//
             installButton.disabled = selectedCount === 0;
             //=====> Update button text based on selected count <=====//
-            installButton.textContent = selectedCount === 0 ? 'تثبيت الإضافات المحددة' : selectedCount === 1 ? 'تثبيت الإضافة المحددة' : 'تثبيت ' + selectedCount + ' إضافات محددة';
+            installButton.textContent = selectedCount === 0 ? 'Install Selected Plugins' : selectedCount === 1 ? 'Install Selected Plugin' : 'Install ' + selectedCount + ' Selected Plugins';
         }
     });
 });
