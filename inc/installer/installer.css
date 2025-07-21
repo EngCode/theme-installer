@@ -1,0 +1,825 @@
+/**
+ * PDS Multimedia Theme Installer Styles
+ * RTL/Arabic friendly styles for the installer interface
+ * 
+ * Features:
+ * - Pure CSS animations and transitions
+ * - No JavaScript inline styles dependency
+ * - RTL/Arabic text direction support
+ * - Responsive design for all devices
+ * - Clean, modern interface following PDS design system
+ * 
+ * @since PDS Multimedia 1.0
+ */
+
+/* Reset and Base Styles */
+.pds-installer-body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.pds-installer-body * {
+    box-sizing: border-box;
+}
+
+/* RTL Support */
+.pds-installer-body[dir="rtl"] {
+    text-align: right;
+}
+
+.pds-installer-body[dir="rtl"] .installer-steps {
+    direction: rtl;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Wrapper */
+.pds-installer-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.95);
+    margin: 20px;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+/* Header */
+.pds-installer-header {
+    background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+    color: white;
+    padding: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.pds-installer-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+}
+
+.pds-installer-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.installer-logo h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.installer-logo span {
+    display: block;
+    font-size: 14px;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+/* Steps Navigation */
+.installer-steps {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.step.active {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.step.completed {
+    background: rgba(72, 187, 120, 0.3);
+}
+
+.step-number {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.step.active .step-number {
+    background: #fff;
+    color: #2d3748;
+}
+
+.step.completed .step-number {
+    background: #48bb78;
+    color: white;
+}
+
+.step-title {
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* Main Content */
+.pds-installer-main {
+    flex: 1;
+    padding: 60px 0;
+    background: #f8fafc;
+}
+
+.installer-step {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.step-content {
+    background: white;
+    padding: 50px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+}
+
+/* Welcome Step */
+.welcome-icon {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.welcome-icon svg {
+    color: #48bb78;
+    filter: drop-shadow(0 4px 8px rgba(72, 187, 120, 0.3));
+}
+
+.step-content h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: #2d3748;
+    margin: 0 0 20px 0;
+    line-height: 1.3;
+}
+
+.step-content p {
+    text-align: center;
+    font-size: 18px;
+    color: #718096;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+/* System Status */
+.system-status {
+    background: #f7fafc;
+    padding: 30px;
+    border-radius: 12px;
+    margin: 40px 0;
+    border: 1px solid #e2e8f0;
+}
+
+.system-status h3 {
+    margin: 0 0 20px 0;
+    font-size: 20px;
+    color: #2d3748;
+    font-weight: 600;
+}
+
+.status-list {
+    display: grid;
+    gap: 15px;
+}
+
+.status-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.status-label {
+    font-weight: 500;
+    color: #4a5568;
+}
+
+.status-value {
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.status-value.good {
+    background: #c6f6d5;
+    color: #22543d;
+}
+
+.status-value.warning {
+    background: #fef5e7;
+    color: #c05621;
+}
+
+.status-value.error {
+    background: #fed7d7;
+    color: #c53030;
+}
+
+/* Plugins List */
+.plugins-list {
+    display: grid;
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.plugin-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 25px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 2px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.plugin-item:hover {
+    border-color: #cbd5e0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.plugin-item.special-plugin {
+    border-color: #9f7aea;
+    background: linear-gradient(135deg, #faf5ff 0%, #f7fafc 100%);
+}
+
+.plugin-checkbox {
+    flex-shrink: 0;
+    margin-top: 5px;
+}
+
+.plugin-checkbox input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    cursor: pointer;
+    accent-color: #667eea;
+}
+
+.plugin-checkbox input[type="checkbox"]:disabled {
+    opacity: 0.5;
+}
+
+.plugin-info h4 {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.plugin-info p {
+    margin: 0 0 10px 0;
+    color: #718096;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.plugin-status {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.plugin-note {
+    display: block;
+    color: #9f7aea;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+/* Content Preview */
+.content-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin: 40px 0;
+    align-items: start;
+}
+
+.content-preview {
+    text-align: center;
+}
+
+.content-preview img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border: 4px solid #fff;
+}
+
+.content-details h3 {
+    margin: 0 0 20px 0;
+    font-size: 22px;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.content-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.content-details li {
+    padding: 12px 0;
+    border-bottom: 1px solid #e2e8f0;
+    position: relative;
+    padding-left: 30px;
+}
+
+.content-details li:last-child {
+    border-bottom: none;
+}
+
+.content-details li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #48bb78;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Progress Bars */
+.install-progress,
+.import-progress {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #e2e8f0;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    width: 0%;
+    transition: width 0.3s ease;
+    position: relative;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+    animation: progress-shine 2s infinite;
+}
+
+@keyframes progress-shine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.progress-text {
+    font-weight: 500;
+    color: #4a5568;
+}
+
+/* Complete Step */
+.success-icon {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.success-icon svg {
+    color: #48bb78;
+    filter: drop-shadow(0 4px 8px rgba(72, 187, 120, 0.3));
+}
+
+.next-steps {
+    margin: 40px 0;
+}
+
+.next-steps h3 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 30px;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.next-step-item {
+    background: #f8fafc;
+    padding: 30px 25px;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.next-step-item:hover {
+    border-color: #cbd5e0;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.step-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.next-step-item h4 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.next-step-item p {
+    margin: 0 0 15px 0;
+    color: #718096;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.step-link {
+    display: inline-block;
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid #667eea;
+    transition: all 0.3s ease;
+}
+
+.step-link:hover {
+    background: #667eea;
+    color: white;
+}
+
+/* Buttons */
+.step-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 180px;
+    text-align: center;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: white;
+    color: #4a5568;
+    border-color: #e2e8f0;
+}
+
+.btn-secondary:hover {
+    border-color: #cbd5e0;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+.pds-installer-footer {
+    background: #2d3748;
+    color: #a0aec0;
+    padding: 30px 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+.pds-installer-footer p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .pds-installer-wrapper {
+        margin: 10px;
+    }
+    
+    .pds-installer-header .container {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .installer-steps {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .step {
+        padding: 8px 15px;
+    }
+    
+    .step-title {
+        font-size: 12px;
+    }
+    
+    .step-content {
+        padding: 30px 25px;
+    }
+    
+    .step-content h2 {
+        font-size: 24px;
+    }
+    
+    .content-options {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .step-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        min-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .step-content {
+        padding: 25px 20px;
+    }
+    
+    .plugin-item {
+        padding: 20px;
+    }
+    
+    .next-step-item {
+        padding: 25px 20px;
+    }
+}
+
+/* RTL Specific Adjustments */
+[dir="rtl"] .plugin-checkbox {
+    margin-right: 0;
+    margin-left: 20px;
+}
+
+[dir="rtl"] .content-details li {
+    padding-right: 30px;
+    padding-left: 0;
+}
+
+[dir="rtl"] .content-details li::before {
+    right: 0;
+    left: auto;
+}
+
+[dir="rtl"] .step {
+    flex-direction: row-reverse;
+}
+
+/* Loading States */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #e2e8f0;
+    border-top-color: #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Enhanced Visual Effects */
+.plugin-item,
+.next-step-item,
+.step-content {
+    position: relative;
+    overflow: hidden;
+}
+
+.plugin-item::before,
+.next-step-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s;
+}
+
+.plugin-item:hover::before,
+.next-step-item:hover::before {
+    left: 100%;
+}
+
+/* Success/Error Messages */
+.message {
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-weight: 500;
+}
+
+.message.success {
+    background: #c6f6d5;
+    color: #22543d;
+    border: 1px solid #9ae6b4;
+}
+
+.message.error {
+    background: #fed7d7;
+    color: #c53030;
+    border: 1px solid #feb2b2;
+}
+
+/*=====> Animation Helper Classes <=====*/
+.pds-fade-in {
+    animation: pds-fadeIn 0.6s ease-out;
+}
+
+.pds-fade-out {
+    animation: pds-fadeOut 0.5s ease-out;
+    opacity: 0;
+}
+
+.pds-fade-in-up {
+    animation: pds-fadeInUp 0.8s ease-out;
+    animation-delay: var(--animation-delay, 0ms);
+    animation-fill-mode: both;
+    opacity: 0;
+}
+
+.pds-show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    animation: pds-fadeIn 0.3s ease-out;
+}
+
+/* Progress and import progress initial states */
+.install-progress,
+.import-progress {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    height: 0;
+    overflow: hidden;
+}
+
+.install-progress.pds-show,
+.import-progress.pds-show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    height: auto;
+}
+
+/* Plugin selection state */
+.plugin-item.selected {
+    border-color: #667eea;
+    background: linear-gradient(135deg, #edf2f7 0%, #e2e8f0 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+}
+
+@keyframes pds-fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pds-fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pds-fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
