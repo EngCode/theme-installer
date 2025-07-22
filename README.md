@@ -1,6 +1,35 @@
-# PDS Theme Installer
+# 🚀 PDS Theme Installer
 
-A robust, standalone WordPress theme installer for importing all required plugins, theme settings, demo content (posts, pages, custom post types, attachments, menus, taxonomies) from XML and JSON backups. Designed for both single-site and multisite WordPress environments.
+A standalone, wizard-based WordPress theme installer — designed for fast, flexible, no-dependency onboarding.
+
+> Built to work with any theme — with or without Phenix Design System.
+
+---
+
+## 🧰 What It Does
+
+The **PDS Theme Installer** provides a modern, full-screen wizard that installs:
+
+- ✅ Required and recommended plugins  
+- ✅ Demo content (XML, JSON, Menus, Widgets, etc.)  
+- ✅ Theme settings (Customizer, templates, etc.)
+
+With support for **multisite**, **RTL languages**, and no need for Composer or third-party plugins, this tool is perfect for **theme developers, SaaS platforms, and agencies**.
+
+---
+
+## ⚡ Why Use This?
+
+| Feature                      | PDS Theme Installer | Merlin WP | OCDI |
+|-----------------------------|---------------------|-----------|------|
+| Full wizard UI              | ✅ Yes              | ✅ Yes    | ❌ No |
+| Plugin install system       | ✅ Built-in         | ⚠️ TGMPA  | ❌ External |
+| Demo content import         | ✅ XML/JSON         | ✅ XML/WIE | ✅ XML/WIE |
+| RTL / Arabic support        | ✅ Built-in         | ⚠️ Manual | ⚠️ Limited |
+| Multisite support           | ✅ Yes              | ❌ No     | ⚠️ Partial |
+| Theme agnostic              | ✅ Yes              | ⚠️ Needs branding | ⚠️ Plugin required |
+| Lightweight setup           | ✅ One config       | ❌ Complex | ❌ Plugin required |
+| Extendable (hooks/UI)       | ✅ Yes              | ⚠️ Limited | ❌ No |
 
 ---
 
