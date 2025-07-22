@@ -1,4 +1,4 @@
-# PDS Theme Installer
+# WP Theme Installer
 
 A robust, standalone WordPress theme installer for importing all required plugins, theme settings, demo content (posts, pages, custom post types, attachments, menus, taxonomies) from XML and JSON backups. Designed for both single-site and multisite WordPress environments.
 
