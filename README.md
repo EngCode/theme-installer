@@ -1,8 +1,7 @@
 # 🚀 PDS Theme Installer
 
 A standalone, wizard-based WordPress theme installer — designed for fast, flexible, no-dependency onboarding.
-
-> Built to work with any theme — with or without Phenix Design System.
+Built to work with any theme — with or without Phenix Design System.
 
 ---
 
